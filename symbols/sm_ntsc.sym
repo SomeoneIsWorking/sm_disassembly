@@ -36571,6 +36571,7 @@
 90:C4A7 FlareAnimationDelays_FlareSlowSparks
 90:C4AE FlareAnimationDelays_FlareFastSparks
 90:C4B5 HandleSwitchingHUDSelection
+90:C4BD HandleSwitchingHUDSelection_readButtons
 90:C4C9 HandleSwitchingHUDSelection_notItemCancel
 90:C4D9 HandleSwitchingHUDSelection_checkItemSelect
 90:C4E9 HandleSwitchingHUDSelection_itemCancel

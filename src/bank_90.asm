@@ -10451,6 +10451,8 @@ HandleSwitchingHUDSelection:
     REP #$30                                                             ;90C4B6;
     LDA.W SelectedHUDItem                                                ;90C4B8;
     STA.B DP_Temp12                                                      ;90C4BB;
+
+  .readButtons:
     LDA.B DP_Controller1New                                              ;90C4BD;
     BIT.W ItemCancelBinding                                              ;90C4BF;
     BEQ .notItemCancel                                                   ;90C4C2;
