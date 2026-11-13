@@ -1065,6 +1065,8 @@ Load_Enemies:
 ; Called when loading the game, and during door transition
 ; This routine loads enemy tile data, which during door transition has already loaded by $82:DFD1, making the call to $8C6C a fairly hefty waste of time
 ; Aside from loading tile data, this routine also loads palette data, and the enemy GFX data needed for respawn
+; EnemyBG2TilemapSize is reset but RequestEnemyBG2TilemapTransferFlag is not: a boss that draws to BG2 (Crocomire, Kraid, Draygon, Ridley) leaves its request pending through the door,
+; and the next room's first enemy frame copies the stale $7E:2000 buffer over BG2 $4800..4BFF. Harmless while the next room never scrolls layer 2 into that half
     PHP                                                                  ;A08A1E;
     PHB                                                                  ;A08A1F;
     PEA.W Load_Enemies>>8&$FF00                                          ;A08A20;
