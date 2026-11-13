@@ -1839,14 +1839,30 @@ HUDTilemap: skip 0 ; $7EC608
 skip $10 ; $7EC608..17
 HUDTilemap_Row1AutoReserve: skip 4 ; $7EC618..1B
 HUDTilemap_Row1Missiles: skip 6 ; $7EC61C..21
-skip $1A ; $7EC624..3B
+skip 2 ; $7EC622..23
+HUDTilemap_Row1SuperMissiles: skip 4 ; $7EC624..27
+skip 2 ; $7EC628..29
+HUDTilemap_Row1PowerBombs: skip 4 ; $7EC62A..2D
+skip 2 ; $7EC62E..2F
+HUDTilemap_Row1Grapple: skip 4 ; $7EC630..33
+skip 2 ; $7EC634..35
+HUDTilemap_Row1Xray: skip 4 ; $7EC636..39
+skip 2 ; $7EC63A..3B
 HUDTilemap_Row1Minimap: skip 10 ; $7EC63C..45
 skip 2 ; $7EC646
 HUDTilemap_Row2: skip 0 ; $7EC648
 skip $10 ; $7EC648..57
 HUDTilemap_Row2AutoReserve: skip 4 ; $7EC658..5B
 HUDTilemap_Row2Missiles: skip 6 ; $7EC65C..61
-skip $1A ; $7EC664..7B
+skip 2 ; $7EC662..63
+HUDTilemap_Row2SuperMissiles: skip 4 ; $7EC664..67
+skip 2 ; $7EC668..69
+HUDTilemap_Row2PowerBombs: skip 4 ; $7EC66A..6D
+skip 2 ; $7EC66E..6F
+HUDTilemap_Row2Grapple: skip 4 ; $7EC670..73
+skip 2 ; $7EC674..75
+HUDTilemap_Row2Xray: skip 4 ; $7EC676..79
+skip 2 ; $7EC67A..7B
 HUDTilemap_Row2Minimap: skip 4 ; $7EC67C..85
 HUDTilemap_SamusMinimapPosition: skip 2 ; $7EC680
 skip $16 ; $7EC682..97
