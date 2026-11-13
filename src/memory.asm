@@ -447,6 +447,7 @@ Layer1YSubPosition: skip 2 ; $0913
 Layer1YPosition: skip 2 ; $0915
 Layer2XPosition: skip 2 ; $0917
 Layer2YPosition: skip 2 ; $0919
+; Bit 0 set: layer 2 is a library background held whole in VRAM, not streamed from level data
 Layer2ScrollX: skip 1 ; $091B
 Layer2ScrollY: skip 1 ; $091C
 BG1XOffset: skip 2 ; $091D
@@ -544,6 +545,7 @@ ItemCancelBinding: skip 2 ; $09B8
 ItemSelectBinding: skip 2 ; $09BA
 AimDownBinding: skip 2 ; $09BC
 AimUpBinding: skip 2 ; $09BE
+; 0: none, 1: auto, 2: manual
 ReserveTankMode: skip 2 ; $09C0
 Energy: skip 2 ; $09C2
 MaxEnergy: skip 2 ; $09C4
@@ -604,6 +606,7 @@ YRadiusDifference: skip 2 ; $0A3A
 SpaceToMoveDownBlock: skip 2 ; $0A3C
 SpaceToMoveUpEnemy: skip 2 ; $0A3E
 SpaceToMoveDownEnemy: skip 2 ; $0A40
+; Bank $90 handlers run before and after Samus movement each frame; the pair also locks Samus
 CurrentStateHandler: skip 2 ; $0A42
 NewStateHandler: skip 2 ; $0A44
 HorizontalSlopeCollision: skip 2 ; $0A46
@@ -1732,6 +1735,7 @@ FXType22BG1XScrollIndirectHDMADataTable: skip $7E ; $7E9F02..??
 ScrollingSkyBG2XScrollHDMADataTable: ; $7E9F80..DB
 
 org $7EA000
+; Four tilemap words per block: top left, top right, bottom left, bottom right
 TileTable:
   .topLeft: skip 2 ; $7EA000
   .topRight: skip 2 ; $7EA002
@@ -1868,6 +1872,7 @@ CrocomireBG2YScrollIndirectHDMATable: skip 8 ; $7ECAE0..E7
 skip 8 ; $7ECAE8..EF
 CrocomireBG2YScrollHDMADataTable: skip $210 ; $7ECAF0..CCEF
 skip $20 ; $7ECCF0..CD1F
+; One byte per screen, row by row: 0 red (never shown), 1 blue, 2 green. Scroll PLMs rewrite it
 Scrolls: skip $32 ; $7ECD20..51
 
 ExploredMapTiles: skip $800 ; $7ECD52..D551
@@ -1906,6 +1911,7 @@ neverReadD8F0: skip 8 ; $7ED8F0..F7
 SRAMMirror_UsedSaveStationsElevators: skip $10 ; $7ED8F8..D907
 SRAMMirror_MapStations: skip 8 ; $7ED908..0F
 skip 4 ; $7ED910..13
+; Where loading a save starts: 5 at the save's load station, 1Fh at Ceres
 SRAMMirror_LoadingGameState: skip 2 ; $7ED914
 SRAMMirror_SaveStationIndex: skip 2 ; $7ED916
 SRAMMirror_AreaIndex: skip 2 ; $7ED918
@@ -1956,6 +1962,7 @@ EnemyProjectileData_SpecialDeathItemDropYOriginPosition: skip 2 ; $7EF436
 
 org $7F0000 ; gameplay
 SizeOfLevelData: skip 2 ; $7F0000
+; One word per block, row by row: block number in bits 0..9, X flip bit Ah, Y flip bit Bh, block type in bits Ch..Fh
 LevelData: skip $6400 ; $7F0002..6401
 BTS: skip $3200 ; $7F6402..9601
 CustomBackground: skip $6400 ; $7F9602..FA01
