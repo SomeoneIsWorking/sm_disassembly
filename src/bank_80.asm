@@ -3582,6 +3582,8 @@ NMI:
 
 
 ;;; $9616: Interrupt command pointers ;;;
+;; Every begin-HUD command shows BG3 alone from line 0 and hands over to the room at line $1F, so
+;; the HUD is lines 0-31 and the playfield lines 32-223 while DP_IRQAutoJoy & $30 and DP_IRQCmd >= 4.
 InterruptCommandPointers:
     dw Interrupt_Cmd0                                                    ;809616;
     dw Interrupt_Cmd2_DisableHVCounterInterrupts                         ;809618;

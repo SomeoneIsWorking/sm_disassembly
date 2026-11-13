@@ -69,9 +69,9 @@ Statuses: ✅ re-verified · 🟡 re-partial (honest gap) · 🔬 in-progress ·
 ## hud
 
 ### hud.split — The HUD/playfield IRQ split and the HUD tilemap
-- status: todo
+- status: re-partial
 - deps: build.symbols
-- evidence: 
-- where: 
-- gap: needed by schmidt plan 0007 (host-drawn HUD over a zoomable playfield)
+- evidence: InterruptCommandPointers ($80:9616): every begin-HUD command writes $2109=$5A, $212C=$04 at line 0 and returns V=$1F H=$98; a capture through gameplay, doors and the pause screen shows DP_IRQCmd 4/8/$16 with NMITIMEN $B1, and 0 with $81 before gameplay
+- where: src/bank_80.asm InterruptCommandPointers; HandleHUDTilemap_PausedAndRunning ($80:9B44)
+- gap: the HUD tilemap's contents (HandleHUDTilemap_PausedAndRunning) are read but not yet checked against a host-drawn HUD
 - notes: 
