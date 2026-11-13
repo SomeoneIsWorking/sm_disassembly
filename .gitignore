@@ -3,3 +3,4 @@
 *.swp
 *.sym
 *.ahk
+!symbols/*.sym
