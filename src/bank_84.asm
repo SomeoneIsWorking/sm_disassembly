@@ -1053,6 +1053,7 @@ Instruction_PLM_TimerEqualsY_8Bit:
     STA.W PLM_Timers,X                                                   ;848753;
     REP #$20                                                             ;848756;
     INY                                                                  ;848758;
+  .exit:
     RTS                                                                  ;848759;
 
 

@@ -7106,6 +7106,7 @@ DoorTransitionScrolling:
   .return:
     PLB                                                                  ;80AE73;
     PLP                                                                  ;80AE74;
+  .exit:
     RTL                                                                  ;80AE75;
 
   .pointers:

@@ -2278,6 +2278,7 @@ Setup_MapScrolling_for_FileSelectMap:
     LDA.W SamusXPosition                                                 ;829040;
     AND.W #$FF00                                                         ;829043;
     XBA                                                                  ;829046;
+  .addRoomMapX:
     CLC                                                                  ;829047;
     ADC.W RoomMapX                                                       ;829048;
     ASL                                                                  ;82904B;
@@ -3715,6 +3716,7 @@ SetupMapScrollingForPauseMenu:
     LDA.W SamusXPosition                                                 ;829E3D;
     AND.W #$FF00                                                         ;829E40;
     XBA                                                                  ;829E43;
+  .addRoomMapX:
     CLC                                                                  ;829E44;
     ADC.W RoomMapX                                                       ;829E45;
     ASL                                                                  ;829E48;
@@ -7636,6 +7638,7 @@ MapScreen_DrawSamusPositionIndicator:
     LDA.W SamusXPosition                                                 ;82B9D1;
     XBA                                                                  ;82B9D4;
     AND.W #$00FF                                                         ;82B9D5;
+  .addRoomMapX:
     CLC                                                                  ;82B9D8;
     ADC.W RoomMapX                                                       ;82B9D9;
     ASL                                                                  ;82B9DC;
@@ -11231,6 +11234,7 @@ endif
 
 +   LDX.W DoorPointer                                                    ;82DFA5;
     LDA.L DoorHeaders_elevatorProperties,X                               ;82DFA8;
+  .checkAreaChange:
     BIT.W #$0040                                                         ;82DFAC;
     BEQ .return                                                          ;82DFAF;
     JSL.L MirrorCurrentAreasMapExplored                                  ;82DFB1;
@@ -11243,6 +11247,7 @@ endif
 Load_Map_Explored_If_Elevator:
     LDX.W DoorPointer                                                    ;82DFB6;
     LDA.L DoorHeaders_elevatorProperties,X                               ;82DFB9;
+  .checkAreaChange:
     BIT.W #$0040                                                         ;82DFBD;
     BEQ .return                                                          ;82DFC0;
     JSL.L LoadMirrorOfCurrentAreasMapExplored                            ;82DFC2;
@@ -11586,6 +11591,7 @@ GameState_A_LoadingNextRoom:
     JSL.L Draw_Samus_Projectiles_Enemies_and_EnemyProjectiles            ;82E1D2;
     JSR.W Draw_Inanimate_Samus_Bank82                                    ;82E1D6;
     JSR.W Load_Destination_RoomCRE_Bitset                                ;82E1D9;
+  .destinationCREBitsetLoaded:
     PEA.W TargetPalettes_BGP0>>8&$FF00                                   ;82E1DC;
     PLB                                                                  ;82E1DF;
     PLB                                                                  ;82E1E0;

@@ -416,6 +416,7 @@ Instruction_EnemyProjectile_TimerInY:
     STA.W EnemyProjectile_Timers,X                                       ;8681D8;
     INY                                                                  ;8681DB;
     INY                                                                  ;8681DC;
+  .exit:
     RTS                                                                  ;8681DD;
 
 

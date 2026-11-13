@@ -1086,6 +1086,7 @@ endif
     STA.W neverRead1790                                                  ;A08A46;
     LDA.W #$0800                                                         ;A08A49;
     STA.W EnemyBG2TilemapSize                                            ;A08A4C;
+  .clearNeverRead179E:
     STZ.W neverRead179E                                                  ;A08A4F;
     STZ.W neverRead17A0                                                  ;A08A52;
     STZ.W BossID                                                         ;A08A55; >.<

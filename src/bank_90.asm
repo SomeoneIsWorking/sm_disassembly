@@ -6306,6 +6306,7 @@ Update_Minimap:
     LDA.W SamusXPosition                                                 ;90A943;
     AND.W #$FF00                                                         ;90A946;
     XBA                                                                  ;90A949; >.<
+  .addRoomMapX:
     CLC                                                                  ;90A94A;
     ADC.W RoomMapX                                                       ;90A94B;
     PHA                                                                  ;90A94E;
