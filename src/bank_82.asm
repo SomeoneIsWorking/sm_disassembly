@@ -11053,6 +11053,8 @@ Load_Door_Header:
     LDA.W $0006,X                                                        ;82DE35;
     AND.W #$00FF                                                         ;82DE38;
     XBA                                                                  ;82DE3B;
+
+  .storeDestinationX:
     STA.W DoorDestinationXPosition                                       ;82DE3C;
     LDA.W $0007,X                                                        ;82DE3F;
     AND.W #$00FF                                                         ;82DE42;

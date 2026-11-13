@@ -4881,6 +4881,7 @@
 82:DDED GameState_19_DeathSequence_BlackOut_return
 82:DDF1 Load_Destination_RoomCRE_Bitset
 82:DE12 Load_Door_Header
+82:DE3C Load_Door_Header_storeDestinationX
 82:DE5F Load_Door_Header_vertical
 82:DE62 Load_Door_Header_positive
 82:DE6F Load_Room_Header
